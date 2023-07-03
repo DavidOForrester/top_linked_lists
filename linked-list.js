@@ -64,7 +64,16 @@ class LinkedList {
     this.length--;
   }
 
-  contains(value) {}
+  contains(value) {
+    let node = this.head;
+    while (node) {
+      if (node.value === value) {
+        return true;
+      }
+      node = node.next
+    }
+    return false;
+  }
 
   find(value) {}
 
@@ -87,5 +96,4 @@ linkedList.append("testing a third");
 linkedList.prepend("this one should be on the front");
 
 linkedList.toString();
-linkedList.pop();
-linkedList.toString();
+console.log(linkedList.contains("testing"));
