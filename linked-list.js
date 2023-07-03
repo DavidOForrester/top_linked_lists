@@ -1,7 +1,6 @@
 class Node {
   constructor(value) {
     this.value = value;
-    this.nextNode = null;
   }
 }
 
@@ -24,7 +23,11 @@ class LinkedList {
     this.length++;
   }
 
-  prepend(value) {}
+  prepend(value) {
+    const newNode = new Node(value);
+    newNode.next = this.head
+    this.head = newNode
+  }
 
   size() {
     console.log(this.length);
@@ -48,14 +51,15 @@ class LinkedList {
 
   find(value) {}
 
-  toString() {}
-
-  print() {
+  toString() {
+    let output = "";
     let node = this.head;
     while (node) {
-      console.log(node.value);
+      output = output + "(" + node.value + ") -> ";
       node = node.next;
     }
+    output = output + "null";
+    console.log(output);
   }
 }
 
@@ -63,8 +67,6 @@ const linkedList = new LinkedList();
 linkedList.append("testing");
 linkedList.append("testing a second one");
 linkedList.append("testing a third");
+linkedList.prepend("this one should be on the front");
 
-linkedList.print();
-linkedList.size();
-linkedList.headNode();
-linkedList.tailNode();
+linkedList.toString();
