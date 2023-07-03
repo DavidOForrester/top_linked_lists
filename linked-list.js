@@ -1,9 +1,17 @@
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.nextNode = null;
+  }
+}
+
 class LinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
     this.length = 0;
   }
+
   append(value) {
     const newNode = new Node(value);
     if (!this.head) {
@@ -16,6 +24,32 @@ class LinkedList {
     this.length++;
   }
 
+  prepend(value) {}
+
+  size() {
+    console.log(this.length);
+  }
+
+  headNode() {
+    let node = this.head;
+    console.log(node.value);
+  }
+
+  tailNode() {
+    let node = this.tail;
+    console.log(node.value);
+  }
+
+  at(index) {}
+
+  pop() {}
+
+  contains(value) {}
+
+  find(value) {}
+
+  toString() {}
+
   print() {
     let node = this.head;
     while (node) {
@@ -25,15 +59,12 @@ class LinkedList {
   }
 }
 
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.nextNode = null;
-  }
-}
-
 const linkedList = new LinkedList();
 linkedList.append("testing");
 linkedList.append("testing a second one");
+linkedList.append("testing a third");
 
 linkedList.print();
+linkedList.size();
+linkedList.headNode();
+linkedList.tailNode();
