@@ -25,8 +25,8 @@ class LinkedList {
 
   prepend(value) {
     const newNode = new Node(value);
-    newNode.next = this.head
-    this.head = newNode
+    newNode.next = this.head;
+    this.head = newNode;
   }
 
   size() {
@@ -45,7 +45,24 @@ class LinkedList {
 
   at(index) {}
 
-  pop() {}
+  pop() {
+    if (!this.head) {
+      return;
+    }
+
+    if (this.head === this.tail) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      let node = this.head;
+      while (node.next !== this.tail) {
+        node = node.next;
+      }
+      node.next = null;
+      this.tail = node;
+    }
+    this.length--;
+  }
 
   contains(value) {}
 
@@ -69,4 +86,6 @@ linkedList.append("testing a second one");
 linkedList.append("testing a third");
 linkedList.prepend("this one should be on the front");
 
+linkedList.toString();
+linkedList.pop();
 linkedList.toString();
