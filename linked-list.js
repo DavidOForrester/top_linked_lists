@@ -85,7 +85,17 @@ class LinkedList {
     return false;
   }
 
-  find(value) {}
+  find(value) {
+    let node = this.head;
+    let i = 0;
+    while (node) {
+      if ((node.value === value)) {
+        return i;
+      }
+      i++;
+      node = node.next;
+    }
+  }
 
   toString() {
     let output = "";
@@ -106,4 +116,4 @@ linkedList.append("testing a third");
 linkedList.prepend("this one should be on the front");
 
 linkedList.toString();
-console.log(linkedList.at(1));
+console.log(linkedList.find("testing"));
