@@ -43,7 +43,17 @@ class LinkedList {
     console.log(node.value);
   }
 
-  at(index) {}
+  at(index) {
+    let node = this.head;
+    let i = 0;
+    while (node) {
+      if (index == i) {
+        return node.value;
+      }
+      i++;
+      node = node.next;
+    }
+  }
 
   pop() {
     if (!this.head) {
@@ -70,7 +80,7 @@ class LinkedList {
       if (node.value === value) {
         return true;
       }
-      node = node.next
+      node = node.next;
     }
     return false;
   }
@@ -96,4 +106,4 @@ linkedList.append("testing a third");
 linkedList.prepend("this one should be on the front");
 
 linkedList.toString();
-console.log(linkedList.contains("testing"));
+console.log(linkedList.at(1));
