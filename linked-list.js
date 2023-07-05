@@ -107,6 +107,10 @@ class LinkedList {
     output = output + "null";
     console.log(output);
   }
+
+  insertAt(value, index) {}
+
+  removeAt(index) {}
 }
 
 const linkedList = new LinkedList();
